@@ -1,11 +1,8 @@
 
-
-const draggable = new Draggable.Draggable(document.querySelectorAll('ul'), {
-  draggable: 'li',
+const droppable = new Draggable.Swappable(document.querySelectorAll('.drag'), {
+  draggable: '.dropzone',
+  droppable: '.drag',
 });
 
-draggable.on('drag:start', () => draggable.removeContainer());
-draggable.on('drag:move',  () => console.log('drag:move'));
-draggable.on('drag:stop',  () => console.log('drag:stop'));
-
-
+droppable.on('droppable:over', () => console.log('droppable:over'));
+droppable.on('droppable:out', () => console.log('droppable:out'));
